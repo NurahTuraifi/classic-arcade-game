@@ -31,6 +31,7 @@ var Engine = (function(global) {
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
      */
+    const allEnemies = [];
     
     function main() {
         /* Get our time delta information which is required if your game
@@ -79,8 +80,8 @@ var Engine = (function(global) {
      * on the entities themselves within your app.js file).
      */
     function update(dt) {
-        //updateEntities(dt);
-        //checkCollisions();
+         updateEntities(dt);
+    //    checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -91,6 +92,7 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
+        // const allEnemies = [];
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
@@ -139,7 +141,7 @@ var Engine = (function(global) {
             }
         }
 
-        //renderEntities();
+        renderEntities();
     }
 
     /* This function is called by the render function and is called on each game
@@ -150,6 +152,7 @@ var Engine = (function(global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
+        // const allEnemies = [];
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });

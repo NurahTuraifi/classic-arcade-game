@@ -1,8 +1,9 @@
-var Enemy = function( x , y , speed ) {
+var Enemy = function( x , y , speed  ) {
+    this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
     this.speed = speed;
-    this.sprite = 'images/enemy-bug.png';
+    
 };
 
 Enemy.prototype.update = function(dt) {
@@ -17,18 +18,18 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-const allEnmies = [];
 
+ 
 function generateSpeed() {
-    return Math.floor(Math.random() * (100 - 50) + +51
-    );
+    return Math.floor(Math.random() * (100 - 50)  +51);
 }
+const allEnmies = [];
 for (i of [1,2,3]){
-    const enemy = new Enemy( 0 , 70 * i , generateSpeed());
+    const enemy = new Enemy( 0 , 70 *i , generateSpeed() );
     allEnmies.push(enemy);
 }
 class Player {
-    constructor(x , y) {
+    constructor(x , y ) {
         this.sprite = 'images/char-boy.png';
         this.x = x;
         this.y = y;
@@ -38,6 +39,7 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
     handleInput(keys) {
+      
         switch (keys) {
             case 'up':
                 this.y -= 50;

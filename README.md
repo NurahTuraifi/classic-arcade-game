@@ -18,3 +18,7 @@ For detailed instructions on how to get started, check out this [guide](https://
 ## Contributing
 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+
+## how to play
+
+the player should get to water and avoding the bugs .
